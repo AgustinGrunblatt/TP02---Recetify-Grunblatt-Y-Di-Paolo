@@ -18,6 +18,15 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost]
+    public IActionResult GenerarSugerencia(SugeridorReceta Sugerencia)
+    {
+        ViewBag.Plato = Sugerencia.DeterminarPlato();
+        ViewBag.Dificultad = Sugerencia.DeterminarDificultad();
+        ViewBag.Edad = Sugerencia.CalcularEdad();
+        return View("Resultado");
+    }
+
     public IActionResult Privacy()
     {
         return View();

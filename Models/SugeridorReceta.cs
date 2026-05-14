@@ -3,12 +3,12 @@ namespace TP02_Recetify_GrunblattyDiPaolo.Models;
 public class SugeridorReceta
 {
     public string Nombre { get; set; }
-    public dateTime Fecha { get; set; }
+    public DateTime Fecha { get; set; }
     public int Tipo { get; set; }
     public int Presupuesto { get; set; }
     public int Cantidad { get; set; }
 
-    public SugeridorReceta(string nombre, dateTime fecha, int tipo, int presupuesto, int cantidad)
+    public SugeridorReceta(string nombre, DateTime fecha, int tipo, int presupuesto, int cantidad)
     {
         this.Nombre = nombre;
         this.Fecha = fecha;
@@ -18,12 +18,11 @@ public class SugeridorReceta
     }
     public SugeridorReceta()
     {
-
     }
 
     public int CalcularEdad()
     {
-        int edad = dateTime.Today.year - Fecha.Year;
+        int edad = DateTime.Today.Year - Fecha.Year;
         return edad;
     }
 
@@ -60,6 +59,7 @@ public class SugeridorReceta
                 return "sushi";
             }
         }
+        return null;
     }
     public int CalcularTiempo()
     {
@@ -93,6 +93,7 @@ public class SugeridorReceta
                 return 40;
             }
         }
+        return 0;
     }
     public string DeterminarDificultad()
     {
@@ -103,7 +104,7 @@ public class SugeridorReceta
                 return "Principiante";
             }
             else if(Cantidad < 8 && Cantidad > 3){
-                return "Intermedio"
+                return "Intermedio";
             }
         }
         else if(Presupuesto >= 3000  && Presupuesto < 7000)
@@ -123,21 +124,22 @@ public class SugeridorReceta
         else{
             return "Avanzado";
         }
+        return "ERROR";
     }
 
     public string GenerarSaludo()
     {
         if ( DateTime.Now.Hour >= 0 && DateTime.Now.Hour < 12)
         {
-            return "Buenos Días"
+            return "Buenos Días";
         }
-        if (DateTime.Now.Hour >= 12 && < 20)
+        if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour< 20)
         {
-            return "Buenas Tardes"
+            return "Buenas Tardes";
         }
         else
         {
-            return "Buenas Noches"
+            return "Buenas Noches";
         }
     }
 
@@ -146,15 +148,15 @@ public class SugeridorReceta
         int edad = CalcularEdad();
         if (edad < 18)
         {
-            return "ESTIMADO MENOR, TENGA SEGURIDAD, QUE TE COMERA EL CUCO"
+            return "ESTIMADO MENOR, TENGA SEGURIDAD, QUE TE COMERA EL CUCO";
         }
         if ( edad >= 60)
         {
-            return "TIENES UN MENSAJE: ERES EPESIAL"
+            return "TIENES UN MENSAJE: ERES EPESIAL";
         }
         else
         {
-            return "NO TE RINDAS, SE MEJOR, AUNQUE SEA UNA PAGINA DE COMIDA"
+            return "NO TE RINDAS, SE MEJOR, AUNQUE SEA UNA PAGINA DE COMIDA";
         }
     }
 }
