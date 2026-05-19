@@ -21,9 +21,13 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult GenerarSugerencia(SugeridorReceta Sugerencia)
     {
+        ViewBag.Usuario = Sugerencia;
         ViewBag.Plato = Sugerencia.DeterminarPlato();
         ViewBag.Dificultad = Sugerencia.DeterminarDificultad();
         ViewBag.Edad = Sugerencia.CalcularEdad();
+        ViewBag.Tiempo = Sugerencia.CalcularTiempo();
+        ViewBag.Saludo = Sugerencia.GenerarSaludo();
+        ViewBag.Tip = Sugerencia.GenerarTip();
         return View("Resultado");
     }
 

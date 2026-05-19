@@ -29,3 +29,25 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+.Result h1 {
+  text-align: center;
+  background-color: #ffee00;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 390%;
+}
+.Result p{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+.Form h1{
+  text-align: center;
+  background-color: #ffee00;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 390%;
+}
+.Form {
+  font-family: 'Times New Roman', Times, serif;
+}
